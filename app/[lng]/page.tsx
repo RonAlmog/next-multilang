@@ -1,11 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslation } from "../i18n";
 
-export default function Home({ params: { lng } }) {
+export default async function Home({ params: { lng } }) {
+  const { t } = await useTranslation(lng, "translation");
   return (
     <div>
-      <h1>Hi there!</h1>
-      <Link href={`/${lng}/second`}>Second page</Link>
+      <h1>{t("title")}</h1>
+      <Link href={`/${lng}/second`}>{t("to-second-page")}</Link>
     </div>
   );
 }
