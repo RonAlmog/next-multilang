@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslation } from "../i18n";
+import Footer from "./components/footer";
 
 interface HomePageProps {
   params: {
@@ -9,11 +10,13 @@ interface HomePageProps {
 }
 
 export default async function Home({ params }: HomePageProps) {
-  const { t } = await useTranslation(params.lng, "translation");
+  const lng = params.lng;
+  const { t } = await useTranslation(lng, "translation");
   return (
     <div>
       <h1>{t("title")}</h1>
-      <Link href={`/${params.lng}/second`}>{t("to-second-page")}</Link>
+      <Link href={`/${lng}/second`}>{t("to-second-page")}</Link>
+      <Footer lng={lng} />
     </div>
   );
 }
