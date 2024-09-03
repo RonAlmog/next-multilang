@@ -5,10 +5,8 @@ interface SecondPageProps {
   params: {
     lng: string;
   };
-  fname: string;
-  isGreat: boolean;
 }
-const SecondPage = async ({ params, fname, isGreat }: SecondPageProps) => {
+const SecondPage = async ({ params }: SecondPageProps) => {
   const { t } = await useTranslation(params.lng, "second-page");
   return (
     <>

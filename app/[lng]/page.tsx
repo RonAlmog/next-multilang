@@ -6,10 +6,9 @@ interface HomePageProps {
   params: {
     lng: string;
   };
-  someProp: string;
 }
 
-export default async function Home({ params, someProp }: HomePageProps) {
+export default async function Home({ params }: HomePageProps) {
   const { t } = await useTranslation(params.lng, "translation");
   return (
     <div>
