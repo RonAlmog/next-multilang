@@ -18,16 +18,21 @@ export default function ClientPage({ params: { lng } }: ClientPageProps) {
 
   return (
     <>
-      <h1>{t("title")}</h1>
-      <p>{t("counter", { count: counter })}</p>
-      <div>
+      <h1 className="px-2 text-xl">{t("title")}</h1>
+      <p className="px-1 my-2">{t("counter", { count: counter })}</p>
+      <div className="my-2 p-3 border border-slate-800 rounded-lg shadow-lg w-56">
         <button
-          className="p-3 mx-3"
+          className="px-3 mx-3 border border-slate-600 rounded-md shadow-sm"
           onClick={() => setCounter(Math.max(0, counter - 1))}
         >
           -
         </button>
-        <button onClick={() => setCounter(Math.min(10, counter + 1))}>+</button>
+        <button
+          className="px-3 mx-3 border border-slate-600 rounded-md shadow-sm"
+          onClick={() => setCounter(Math.min(10, counter + 1))}
+        >
+          +
+        </button>
       </div>
       <Link href={`/${lng}`}>
         <button type="button">{t("back-to-home")}</button>
