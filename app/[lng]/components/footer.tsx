@@ -10,9 +10,7 @@ const Footer = async ({ lng }: Props) => {
 
   return (
     <footer className="mt-10">
-      <Trans i18nKey="languageSwitcher" t={t}>
-        Switch from <strong>{lng}</strong> to:{" "}
-      </Trans>
+      <span>{t("languageSwitcher", lng)}</span>
       {languages
         .filter((l) => lng !== l)
         .map((l, index) => {
