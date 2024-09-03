@@ -21,7 +21,12 @@ export default function ClientPage({ params: { lng } }: ClientPageProps) {
       <h1>{t("title")}</h1>
       <p>{t("counter", { count: counter })}</p>
       <div>
-        <button onClick={() => setCounter(Math.max(0, counter - 1))}>-</button>
+        <button
+          className="p-3 mx-3"
+          onClick={() => setCounter(Math.max(0, counter - 1))}
+        >
+          -
+        </button>
         <button onClick={() => setCounter(Math.min(10, counter + 1))}>+</button>
       </div>
       <Link href={`/${lng}`}>

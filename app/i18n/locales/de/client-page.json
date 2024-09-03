@@ -1,5 +1,5 @@
 {
   "title": "das title",
-  "counter": "das counter",
+  "counter": "{{count}} selected de",
   "back-to-home": "Back to home de"
 }
