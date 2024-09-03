@@ -1,13 +1,8 @@
 import Link from "next/link";
 import { Trans } from "react-i18next/TransWithoutContext";
-import { languages } from "../../i18n/settings";
-import { useTranslation } from "../../i18n";
+import { languages } from "../../../i18n/settings";
 
-type Props = { lng: string };
-
-const Footer = async ({ lng }: Props) => {
-  const { t } = await useTranslation(lng, "footer");
-
+export const FooterBase = ({ t, lng }: { t: any; lng: string }) => {
   return (
     <footer className="mt-10">
       <span>{t("languageSwitcher", lng)}</span>
@@ -24,5 +19,3 @@ const Footer = async ({ lng }: Props) => {
     </footer>
   );
 };
-
-export default Footer;

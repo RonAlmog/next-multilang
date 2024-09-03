@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useTranslation } from "../../i18n";
-import Footer from "../components/footer";
+import { Footer } from "../components/footer";
 
 interface SecondPageProps {
   params: {
